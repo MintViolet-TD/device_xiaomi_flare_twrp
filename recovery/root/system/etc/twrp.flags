@@ -1,0 +1,45 @@
+# Mount point       FStype    Device                                  Flags
+
+# Boot / Recovery
+/boot               emmc      /dev/block/by-name/boot                 flags=backup=1;flashimg=1;display="Boot"
+/vendor_boot        emmc      /dev/block/by-name/vendor_boot          flags=backup=1;flashimg=1;display="Vendor Boot";slotselect
+/dtbo               emmc      /dev/block/by-name/dtbo                 flags=backup=1;flashimg=1;display="DTBO";slotselect
+/recovery           emmc      /dev/block/by-name/recovery             flags=backup=1;flashimg=1;display="Recovery"
+
+# Firmware / Logo 
+/logo               emmc      /dev/block/by-name/logo                 flags=backup=1;display="Logo";slotselect
+/vbmeta             emmc      /dev/block/by-name/vbmeta               flags=backup=1;flashimg=1;display="VBMeta";slotselect
+/vbmeta_system      emmc      /dev/block/by-name/vbmeta_system        flags=backup=1;flashimg=1;display="VBMeta System";slotselect
+/vbmeta_vendor      emmc      /dev/block/by-name/vbmeta_vendor        flags=backup=1;flashimg=1;display="VBMeta Vendor";slotselect
+
+# Persistent / NVRAM 
+/nvram              emmc      /dev/block/by-name/nvram                flags=backup=1;display="NVRAM"
+/nvdata             ext4      /dev/block/by-name/nvdata               flags=backup=1;subpartitionof=/nvram;display="NVData"
+/nvcfg              ext4      /dev/block/by-name/nvcfg                flags=backup=1;subpartitionof=/nvram;display="NVCfg"
+/persist            ext4      /dev/block/by-name/persist              flags=backup=1;display="Persist"
+/proinfo            emmc      /dev/block/by-name/proinfo              flags=backup=1;display="Proinfo"
+/protect_f          ext4      /dev/block/by-name/protect1             flags=backup=1;display="Protect_F"
+/protect_s          ext4      /dev/block/by-name/protect2             flags=backup=1;display="Protect_S"
+
+# Removable Storage (SD Card / OTG)
+/external_sd        auto      /dev/block/mmcblk1p1  /dev/block/mmcblk1        flags=display="Micro SD Card";storage;wipeingui;removable
+/usb_otg            auto      /dev/block/sda1       /dev/block/sda            flags=display="USB OTG";storage;wipeingui;removable
+
+# Misc
+/misc               emmc      /dev/block/by-name/misc                 flags=display="Misc"
+/para               emmc      /dev/block/by-name/para                 flags=display="Para"
+/expdb              emmc      /dev/block/by-name/expdb                flags=display="Expdb"
+/frp                emmc      /dev/block/by-name/frp                  flags=display="FRP";backup=1
+/metadata           ext4      /dev/block/by-name/metadata             flags=display="Metadata";backup=1;wrappedkey
+
+# Modem (MTK)
+/md1img             emmc      /dev/block/by-name/md1img               flags=display="Modem";backup=1;slotselect
+/spmfw              emmc      /dev/block/by-name/spmfw                flags=display="Spmfw";backup=1;slotselect
+/scp                emmc      /dev/block/by-name/scp                  flags=display="Scp";backup=1;slotselect
+/sspm               emmc      /dev/block/by-name/sspm                 flags=display="Sspm";backup=1;slotselect
+/gz                 emmc      /dev/block/by-name/gz                   flags=display="Gz";backup=1;slotselect
+/lk                 emmc      /dev/block/by-name/lk                   flags=display="Bootloader (LK)";backup=1;slotselect
+/tee                emmc      /dev/block/by-name/tee                  flags=display="Tee";backup=1;slotselect
+
+# Dynamic Partitions (Логические разделы)
+/super              emmc      /dev/block/by-name/super                flags=display="Super";backup=1;flashimg=1
