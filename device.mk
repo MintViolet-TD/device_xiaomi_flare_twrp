@@ -33,11 +33,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     bootctrl.mt6768
 
-PRODUCT_STATIC_BOOT_CONTROL_HAL := \
-    bootctrl.mt6768 \
-    libz \
-    libcutils
-
 PRODUCT_PACKAGES += \
     cppreopts.sh \
     update_engine \
