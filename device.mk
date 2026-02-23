@@ -31,9 +31,6 @@ PRODUCT_PACKAGES += \
     fastbootd
 
 PRODUCT_PACKAGES += \
-    bootctrl.mt6768
-
-PRODUCT_PACKAGES += \
     cppreopts.sh \
     update_engine \
     update_verifier \
